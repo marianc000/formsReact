@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="logo192.png">
+    <link rel="manifest" href="manifest.json">
+    <title>React App</title>
+    <link href="static/css/main.a84ccd61.chunk.css" rel="stylesheet">
+    <link href="css/my.css" rel="stylesheet">
+    <style data-emotion="css" data-s=""></style>
+    <script src="js/main.js" type='module'></script>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+        <h1>Subscribe!</h1>
+        <form action="#" id='subscribeForm' novalidate>
+            <div>
+                <label for="firstName">First Name</label>
+                <input class="text-input" id='firstName' name="firstName" type="text" placeholder="Jane" required
+                    maxlength=15 minlength=2 data-valueMissing="Required" data-tooShort="Must be 2 characters or more">
+                <div class="error"></div>
+            </div>
+            <div>
+                <label for="lastName">Last Name</label>
+                <input class="text-input" id='lastName' name="lastName" type="text" placeholder="Doe" value="" required
+                    maxlength=20 minlength=2 data-valueMissing="Required" data-tooShort="Must be 2 characters or more">
+                <div class="error"></div>
+            </div>
+            <div>
+                <label for="email">Email Address</label>
+                <input class="text-input" id='email' name="email" type="email" placeholder="jane@formik.com" value=""
+                    required data-valueMissing="Required" data-typeMismatch="Invalid email addresss">
+                <div class="error"></div>
+            </div>
+            <div>
+                <label for="jobType" class="css-1b2x0kn">Job Type</label>
+                <select id='jobType' name="jobType" class="css-1d8wxgg" required data-valueMissing="Required">
+                    <option value="">Select a job type</option>
+                    <option value="designer">Designer</option>
+                    <option value="development">Developer</option>
+                    <option value="product">Product Manager</option>
+                    <option value="other">Other</option>
+                </select>
+                <div class="error"></div>
+            </div>
+
+            <div>
+                <input id='acceptedTerms' name="acceptedTerms" type="checkbox" required data-valueMissing="Required">
+                <label for="acceptedTerms" class="checkbox">I accept the terms and conditions</label>
+                <div class="error"></div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id='spinnerEl'>
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+            <div id='dataEl'></div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
