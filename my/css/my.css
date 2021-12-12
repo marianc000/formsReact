@@ -39,7 +39,7 @@ input:user-invalid {
     opacity: 0;
   }
 }
-#spinnerEl {
+#spinnerDiv {
     position: fixed;
     flex-direction: column;
     top: 0;
@@ -52,7 +52,7 @@ input:user-invalid {
     background-color: rgba(230,240,200,0.5);
 }
 
-#dataEl {
+#dataDiv {
     background-color: white;
     padding: 1em;
 }
