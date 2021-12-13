@@ -3,7 +3,7 @@ import { showSpinner, hideSpinner } from './spinner.js';
 const ERRORS = ['valueMissing', 'typeMismatch', 'patternMismatch', 'tooLong', 'tooShort',
   'rangeUnderflow', 'rangeOverflow', 'stepMismatch', 'badInput'];
 
-const fields = [...subscribeForm.querySelectorAll('input,select')];
+const fields = [...subscribeForm.elements].filter(el => el.tagName !== 'BUTTON');
 
 fields.forEach(el => {
   const name = el.type === 'checkbox' ? 'change' : 'blur';
@@ -13,17 +13,13 @@ fields.forEach(el => {
 function fieldError(el) {
   const error = ERRORS.filter(err => el.validity[err])
     .map(err => el.dataset[err.toLowerCase()]).join('');
-
   return el.parentElement.querySelector('.error').innerHTML = error;
-}
-
-function formValid() {
-  return !fields.filter(el => fieldError(el)).length;
 }
 
 function onSubmit(e) {
   e.preventDefault();
-  if (formValid())
+  const errors = fields.filter(el => fieldError(el));
+  if (!errors.length)
     post(new FormData(e.target)).finally(hideSpinner);
 };
 
